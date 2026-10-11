@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#101014" />
+  <meta name="description" content="Encontre jogadores e organize partidas retrô online." />
+  <title>NEON//VERSUS — Retro Netplay</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#top"><span class="brand-mark">N//V</span><span>NEON<span class="accent">//</span>VERSUS</span></a>
+      <nav><a href="#games">Jogos</a><a href="#rooms">Salas</a><a href="#about">Como funciona</a></nav>
+      <div class="user-area"><span id="connection-dot" class="dot"></span><span id="connection-label">DESCONECTADO</span><button id="connect-button" class="connect">CONECTAR</button></div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="line"></span> ARCADE NETPLAY COMMUNITY</div>
+          <h1>JOGUE O<br><span>CLÁSSICO.</span><br>ONLINE.</h1>
+          <p>Encontre oponente, entre numa sala e reviva jogos de luta retrô com a comunidade.</p>
+          <div class="hero-actions"><button class="primary" id="quick-match">BUSCA RÁPIDA <span>↗</span></button><a class="secondary" href="#games">EXPLORAR JOGOS <span>↓</span></a></div>
+          <div class="microcopy"><span class="pulse"></span> SALAS EM TEMPO REAL · PROTÓTIPO</div>
+        </div>
+        <div class="hero-art" aria-label="Arte abstrata neon retrô"><div class="sun"></div><div class="scanlines"></div><div class="arcade-label">INSERT<br>COIN<span>_</span></div><div class="hero-index">001 — NETPLAY</div></div>
+      </section>
+
+      <section class="statusbar"><div><b id="online-count" class="status-number">—</b><span>JOGADORES<br><small>EM SALAS VISÍVEIS</small></span></div><div><b class="status-number">03</b><span>JOGOS<br><small>CATÁLOGO INICIAL</small></span></div><div><b class="status-number">WS</b><span>CONEXÃO<br><small>WEBSOCKET AO VIVO</small></span></div></section>
+
+      <section class="section" id="games">
+        <div class="section-heading"><div><div class="eyebrow">01 / SELECIONE SEU JOGO</div><h2>ESCOLHA A ARENA<span>.</span></h2></div><span class="section-note">CATÁLOGO DE DEMONSTRAÇÃO · 3 TÍTULOS</span></div>
+        <div class="game-grid">
+          <button class="game-card selected" data-game="sf3"><div class="game-art art-1"><span class="game-tag">LUTA 2D</span><span class="game-code">01</span><span class="art-word">IMPACT</span></div><div class="game-info"><div><h3>Street Fighter III</h3><p>3rd Strike · 1999</p></div><span class="select-mark">SELECIONADO</span></div></button>
+          <button class="game-card" data-game="kof2002"><div class="game-art art-2"><span class="game-tag">LUTA 2D</span><span class="game-code">02</span><span class="art-word">FIGHT</span></div><div class="game-info"><div><h3>The King of Fighters</h3><p>2002 · 2002</p></div><span class="select-mark">SELECIONAR</span></div></button>
+          <button class="game-card" data-game="garou"><div class="game-art art-3"><span class="game-tag">LUTA 2D</span><span class="game-code">03</span><span class="art-word">WOLVES</span></div><div class="game-info"><div><h3>Garou: Mark of the Wolves</h3><p>Real Bout 2 · 1999</p></div><span class="select-mark">SELECIONAR</span></div></button>
+        </div>
+      </section>
+
+      <section class="match-panel"><div><div class="eyebrow">PRONTO PRA LUTA?</div><h2>SEU PRÓXIMO<br>OPONENTE TÁ AÍ.</h2><p>Selecionado: <strong id="selected-title">Street Fighter III — 3rd Strike</strong></p></div><div class="match-actions"><label class="name-label">SEU NICK<input id="player-name" maxlength="20" value="Player" aria-label="Seu apelido"></label><button class="primary" id="match-button">ENCONTRAR OPONENTE ↗</button><button class="outline" id="create-room">CRIAR SALA PRIVADA +</button></div></section>
+
+      <section class="section room-section" id="rooms"><div class="section-heading"><div><div class="eyebrow">02 / AO VIVO</div><h2>SALAS ABERTAS<span>.</span></h2></div><span id="room-count" class="section-note">0 SALAS DISPONÍVEIS</span></div><div id="room-list" class="room-list"></div><p id="notice" class="notice" role="status">Conecte-se para ver as salas ao vivo.</p></section>
+
+      <section class="about" id="about"><div class="eyebrow">03 / COMEÇANDO</div><h2>DOIS JOGADORES.<br><span>UMA CONEXÃO.</span></h2><p>Este protótipo já prepara catálogo, salas e matchmaking ao vivo com Cloudflare Workers. Ainda não executa jogos: emulação, integração de jogos e rollback netcode precisam ser adicionados em etapas futuras.</p><div class="steps"><div><b>01</b><span>Escolha um jogo</span></div><div><b>02</b><span>Crie ou encontre sala</span></div><div><b>03</b><span>Convide seu oponente</span></div></div></section>
+    </main>
+    <footer><a class="brand" href="#top"><span class="brand-mark">N//V</span><span>NEON<span class="accent">//</span>VERSUS</span></a><span>PROJETO INDEPENDENTE · PROTÓTIPO</span><span>SEM ROMS OU BIOS INCLUÍDAS</span></footer>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
